@@ -1,0 +1,5 @@
+"use strict";$('.fontsize').on('input',function(){var size=$(this).val()+"px";var lh=($(this).val()*1.5)+"px";$('.preview').find('fontpriview').css('font-size',size);$('.preview').find('fontpriview').css('line-height',lh);});$('.fontspace').on('input',function(){var space=$(this).val()+"px";$('.preview').find('fontpriview').css('letter-spacing',space);});function isBlank(str){return(!str||/^\s*$/.test(str));}
+$('.bcustom-text').on('input',function(){var mtext=$(this).val();$('.bcustom-text').val(mtext);var df="আমার সোনার বাংলা";if(isBlank(mtext)){$('.preview').each(function(){var ftype=$(this).find('fontpriview').attr('data-ftype');if(ftype==2){$(this).find('fontpriview').text(unicode2bijoy(df));}
+else{$(this).find('fontpriview').text(df);}});}
+else{$('.preview').each(function(){var ftype=$(this).find('fontpriview').attr('data-ftype');if(ftype==2){$(this).find('fontpriview').text(unicode2bijoy(mtext));}
+else{$(this).find('fontpriview').text(mtext);}});}});
